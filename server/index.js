@@ -15,7 +15,9 @@ import { error } from "console";
 import { register } from "./controllers/auth.js";
 import {createPost} from "./controllers/posts.js"
 import { verifyToken } from "./middleware/auth.js";
-
+import User from "./models/User.js";
+import Post from "./models/Post.js";
+import { users,posts} from "./data/index.js";
 // Config
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
@@ -47,8 +49,8 @@ app.post("/posts", verifyToken,upload.single("picture"), createPost);
 
 // Routes
 app.use("/auth", authRoutes);
-app.use("/users", userRoutes);
-app.use("/posts", postRouters);
+app.use("/users", useRoutes); // Change userRoutes to useRoutes
+app.use("/posts", postRoutes);
 
 // Mongoose config
 const PORT = process.env.PORT || 6001;
