@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          Chas mi ho kar
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
