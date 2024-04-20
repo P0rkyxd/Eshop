@@ -39,7 +39,7 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  const fullName = user ? `${user.firstName} ${user.lastName}` : '';
+  const fullName = user?.firstName ? `${user.firstName} ${user.lastName}` : "";
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          sez u
+          Sociopedia
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
@@ -78,9 +78,9 @@ const Navbar = () => {
         <FlexBetween gap="2rem">
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
-              <LightMode sx={{ color: dark, fontSize: "25px" }} /> // Light mode icon
+              <DarkMode sx={{ fontSize: "25px" }} />
             ) : (
-              <DarkMode sx={{ fontSize: "25px" }} /> // Dark mode icon
+              <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
           <Message sx={{ fontSize: "25px" }} />
@@ -153,9 +153,9 @@ const Navbar = () => {
               sx={{ fontSize: "25px" }}
             >
               {theme.palette.mode === "dark" ? (
-                <LightMode sx={{ color: dark, fontSize: "25px" }} /> // Light mode icon
+                <DarkMode sx={{ fontSize: "25px" }} />
               ) : (
-                <DarkMode sx={{ fontSize: "25px" }} /> // Dark mode icon
+                <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
             </IconButton>
             <Message sx={{ fontSize: "25px" }} />
