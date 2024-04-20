@@ -4,7 +4,7 @@ import Navbar from "scenes/navbar/index"; // Importing the Navbar component
 const HomePage = () => {
   return (
     <Box>
-      <Navbar /> 
+      <Navbar />
     </Box>
   );
 };
