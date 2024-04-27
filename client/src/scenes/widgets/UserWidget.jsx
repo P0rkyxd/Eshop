@@ -48,8 +48,6 @@ const UserWidget = ({ userId, picturePath }) => {
     friends,
   } = user;
 
-  const friendsCount = friends ? friends.length : 0; // Ensure friends array is not undefined
-
   return (
     <WidgetWrapper>
       {/* FIRST ROW */}
@@ -74,7 +72,7 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friendsCount} friends</Typography>
+            <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />
